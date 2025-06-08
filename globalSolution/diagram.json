@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Allan",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -50, "left": 100, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht22", "top": -86.1, "left": 301.8, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 100, "left": 250, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 60, "left": 250, "attrs": { "value": "220" } },
+    { "type": "wokwi-led", "id": "led2", "top": 100, "left": 320, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": 60, "left": 320, "attrs": { "value": "220" } },
+    { "type": "wokwi-led", "id": "led3", "top": 100, "left": 390, "attrs": { "color": "blue" } },
+    { "type": "wokwi-resistor", "id": "r3", "top": 60, "left": 390, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:D19", "dht22:DATA", "orange", [] ],
+    [ "dht22:VCC", "esp:3V3", "red", [] ],
+    [ "dht22:GND", "esp:GND", "black", [] ],
+    [ "esp:D2", "r1:1", "red", [ "v0" ] ],
+    [ "r1:2", "led1:A", "red", [ "v0" ] ],
+    [ "led1:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "esp:D4", "r2:1", "yellow", [ "v0" ] ],
+    [ "r2:2", "led2:A", "yellow", [ "v0" ] ],
+    [ "led2:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "esp:D5", "r3:1", "blue", [ "v0" ] ],
+    [ "r3:2", "led3:A", "blue", [ "v0" ] ],
+    [ "led3:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ]
+  ],
+  "dependencies": {}
+}
