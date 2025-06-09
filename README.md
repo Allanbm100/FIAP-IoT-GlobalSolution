@@ -1,4 +1,4 @@
-# 🛵 Projeto SafeQuake - Global Solution
+# Projeto SafeQuake - Global Solution
 
 ## 📋 Descrição do Projeto
 
